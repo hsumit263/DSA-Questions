@@ -2,6 +2,7 @@
 
 // Given a string s, return true if it is a palindrome, or false otherwise.
 
+// less optimised 
 class Solution {
 public:
     bool isPalindrome(string s) {
@@ -21,3 +22,39 @@ public:
         return true;
     }
 };
+
+// more optimised
+#include <bits/stdc++.h> 
+
+bool valid(char ch){
+    if((ch>='a' and ch<='z') || (ch>='A' and ch<='Z') || (ch>='0' and ch<='9')) return 1;
+    else return 0;
+}
+
+char toLowerCase(char ch){
+    if(ch>='a' && ch<='z') return ch;
+    else{
+        char temp=ch-'A'+'a';
+        return temp;
+    }
+}
+
+bool checkPalindrome(string s)
+{
+    int i=0;
+    int j=s.size()-1;
+
+    while(i<=j){
+
+        if (toLowerCase(s[i]) == toLowerCase(s[j])) {
+          i++;
+          j--;
+        }
+        else if(!valid(s[i]))i++;
+        else if(!valid(s[j]))j--;
+        else{
+            return false;
+        }
+    }
+    return true;
+}

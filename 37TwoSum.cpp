@@ -12,4 +12,24 @@ string read(int n, vector<int> book, int target)
     // }
 
     // return "NO";
+
+    // optimal approach
+
+    sort(book.begin(),book.end());
+
+    int left=0;
+    int right=n-1;
+    int sum;
+    while(left<right){
+
+        sum=book[left]+book[right];
+
+        if(sum==target) return "YES";
+
+        else if(sum<target) left++;
+        else right--;
+        
+    }
+
+    return "NO";
 }

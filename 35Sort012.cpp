@@ -2,22 +2,22 @@
 
  void sort012(int a[], int n)
     {
-        //First approach 
-        // int low=0;
-        // int mid=0;
-        // int high=n-1;
+        //First approach  -- Dutch National Flag Algorithm
+        int low=0;
+        int mid=0;
+        int high=n-1;
         
-        // while(mid<=high){
-        //     if(a[mid]==0) swap(a[low++],a[mid++]);
+        while(mid<=high){
+            if(a[mid]==0) swap(a[low++],a[mid++]);
             
-        //     else if(a[mid]==1) mid++;
+            else if(a[mid]==1) mid++;
             
-        //     else swap(a[mid],a[high--]);
+            else swap(a[mid],a[high--]);
                 
             
-        // }
+        }
         
-        // return;
+        return;
 
         // Second approach
            int zero=0;

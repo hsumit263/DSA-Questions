@@ -1,3 +1,6 @@
+// You are given an array arr of length n consisting of integers
+// Find the sum of the subarray (including empty subarray) having maximum sum among all subarrays
+
 long long maxSubarraySum(vector<int> arr, int n)
 {   
    // brute force approach

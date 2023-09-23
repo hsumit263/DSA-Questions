@@ -1,4 +1,7 @@
-// 
+// You are given an array 'a' of size 'n' with equal number of positive and negative elements . 
+// Without altering the relative ordering of positive and negative numbers, you must return an array of 
+// alternate positive and negaitve values .
+
 
 vector<int> alternateNumbers(vector<int>&a) {
     

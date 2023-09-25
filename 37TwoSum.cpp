@@ -15,21 +15,35 @@ string read(int n, vector<int> book, int target)
 
     // optimal approach
 
-    sort(book.begin(),book.end());
+    // sort(book.begin(),book.end());
 
-    int left=0;
-    int right=n-1;
-    int sum;
-    while(left<right){
+    // int left=0;
+    // int right=n-1;
+    // int sum;
+    // while(left<right){
 
-        sum=book[left]+book[right];
+    //     sum=book[left]+book[right];
 
-        if(sum==target) return "YES";
+    
+    //     if(sum==target) return "YES";
 
-        else if(sum<target) left++;
-        else right--;
+    //     else if(sum<target) left++;
+    //     else right--;
         
-    }
+    // }
 
-    return "NO";
+    // return "NO";
+
+    // optimal approach when indices of the elements whose sum is target is to be returned
+     map<int,int> mpp;
+        for(int i=0;i<nums.size();i++){
+            int n=nums[i];
+            int required=target-n;
+
+            if(mpp.find(required)!=mpp.end()){
+                return {i,mpp[required]};
+            }
+            mpp[n]=i;
+        }
+        return {-1,-1};
 }

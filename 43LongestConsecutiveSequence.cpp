@@ -1,3 +1,5 @@
+// You are given array 'a' with size 'n'. You must return the length of the longest consecutive sequence(array with adjacent elements having difference of 1)
+
 int longestSuccessiveElements(vector<int>&a) {
     
     // // BETTER APPROACH

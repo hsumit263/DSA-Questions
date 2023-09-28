@@ -5,12 +5,14 @@
 void rotate(vector<vector<int>>& matrix) {
         int row=matrix.size();
 
+        // swap the elements that are dizgonally opposite
         for(int r=0;r<row;r++){
             for(int c=0;c<=r;c++){
                 swap(matrix[r][c],matrix[c][r]);
             }
         }
 
+        // then reverse each row of the array
         for(int r=0;r<row;r++){
             reverse(matrix[r].begin(),matrix[r].end());
         }
